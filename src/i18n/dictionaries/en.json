@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "work": "Work",
+    "notes": "Notes",
+    "about": "About",
+    "contact": "Contact ↗"
+  },
+  "hero": {
+    "headline": "From interface\nto origin server.",
+    "subheadline": "Web products, automation, and infrastructure built end to end—not just the interface.",
+    "viewWork": "View selected work",
+    "startProject": "Start a project",
+    "currently": "Currently",
+    "stack": "Stack"
+  },
+  "sections": {
+    "selectedWork": "SELECTED WORK",
+    "selectedWorkSub": "Systems built under real constraints.",
+    "capabilities": "CAPABILITIES",
+    "workingNotes": "WORKING NOTES",
+    "workingNotesSub": "Short records from systems that had to work.",
+    "about": "ABOUT",
+    "contact": "CONTACT",
+    "allWork": "ALL WORK",
+    "allWorkSub": "Systems built under real constraints."
+  },
+  "project": {
+    "viewCaseStudy": "View case study",
+    "liveSite": "Live site",
+    "moreWork": "More work",
+    "allSelectedWork": "All selected work",
+    "verified": "Verified",
+    "designTarget": "Design Target",
+    "scope": "Scope",
+    "operationalScale": "Operational Scale"
+  },
+  "caseStudy": {
+    "context": "Context",
+    "constraints": "Constraints",
+    "systemDesign": "System Design",
+    "keyDecisions": "Key Decisions",
+    "verification": "Verification & Result",
+    "improvements": "What I Would Improve Next",
+    "visitLiveSite": "Visit live site",
+    "stack": "Stack",
+    "role": "Role",
+    "duration": "Duration",
+    "status": "Status"
+  },
+  "about": {
+    "heading": "About",
+    "greeting": "Hello, I'm Idham Khalid.",
+    "viewResume": "View full resume",
+    "howIWork": "How I work",
+    "techStack": "Tech Stack",
+    "experience": "Experience",
+    "services": "What I Can Do",
+    "principles": "Core Principles",
+    "location": "Location",
+    "timezone": "Timezone",
+    "availability": "Availability"
+  },
+  "contact": {
+    "headline": "Have a workflow that's still manual,",
+    "headlineLine2": "or a system that needs end-to-end work?",
+    "cta": "Let's discuss the build",
+    "comingSoon": "Contact details coming soon."
+  },
+  "footer": {
+    "designed": "Made with Love IDKhalid",
+    "updated": "Updated"
+  },
+  "capabilities": {
+    "build": "Build",
+    "buildDesc": "Web applications, landing pages, dashboards, APIs, and internal tools.",
+    "automate": "Automate",
+    "automateDesc": "Browser workflows, account workers, bots, scheduled jobs, and repetitive operational processes.",
+    "operate": "Operate",
+    "operateDesc": "Linux servers, deployments, Cloudflare, service management, origin protection, and production troubleshooting."
+  }
+}

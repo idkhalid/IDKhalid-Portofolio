@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "work": "Karya",
+    "notes": "Catatan",
+    "about": "Tentang",
+    "contact": "Kontak ↗"
+  },
+  "hero": {
+    "headline": "Dari interface\nsampai origin server.",
+    "subheadline": "Web products, automation, dan infrastructure yang dibangun end to end—bukan hanya selesai di tampilan.",
+    "viewWork": "Lihat karya pilihan",
+    "startProject": "Mulai project",
+    "currently": "Saat ini",
+    "stack": "Stack"
+  },
+  "sections": {
+    "selectedWork": "KARYA PILIHAN",
+    "selectedWorkSub": "Sistem yang dibangun dengan batasan nyata.",
+    "capabilities": "KEMAMPUAN",
+    "workingNotes": "CATATAN KERJA",
+    "workingNotesSub": "Catatan singkat dari sistem yang harus berjalan.",
+    "about": "TENTANG",
+    "contact": "KONTAK",
+    "allWork": "SEMUA KARYA",
+    "allWorkSub": "Sistem yang dibangun dengan batasan nyata."
+  },
+  "project": {
+    "viewCaseStudy": "Lihat studi kasus",
+    "liveSite": "Situs live",
+    "moreWork": "Karya lainnya",
+    "allSelectedWork": "Semua karya pilihan",
+    "verified": "Terverifikasi",
+    "designTarget": "Target Desain",
+    "scope": "Cakupan",
+    "operationalScale": "Skala Operasional"
+  },
+  "caseStudy": {
+    "context": "Konteks",
+    "constraints": "Batasan",
+    "systemDesign": "Desain Sistem",
+    "keyDecisions": "Keputusan Kunci",
+    "verification": "Verifikasi & Hasil",
+    "improvements": "Yang Akan Saya Perbaiki",
+    "visitLiveSite": "Kunjungi situs live",
+    "stack": "Stack",
+    "role": "Peran",
+    "duration": "Durasi",
+    "status": "Status"
+  },
+  "about": {
+    "heading": "Tentang",
+    "greeting": "Halo, saya Idham Khalid.",
+    "viewResume": "Lihat resume lengkap",
+    "howIWork": "Cara saya bekerja",
+    "techStack": "Tech Stack",
+    "experience": "Pengalaman",
+    "services": "Apa yang bisa saya bantu?",
+    "principles": "Prinsip Kerja",
+    "location": "Lokasi",
+    "timezone": "Zona Waktu",
+    "availability": "Ketersediaan"
+  },
+  "contact": {
+    "headline": "Ada workflow yang masih dikerjakan manual,",
+    "headlineLine2": "atau sistem yang perlu dibereskan end to end?",
+    "cta": "Mari diskusikan projectnya",
+    "comingSoon": "Detail kontak segera hadir."
+  },
+  "footer": {
+    "designed": "Made with Love IDKhalid",
+    "updated": "Diperbarui"
+  },
+  "capabilities": {
+    "build": "Bangun",
+    "buildDesc": "Aplikasi web, landing page, dashboard, API, dan internal tools.",
+    "automate": "Otomasi",
+    "automateDesc": "Browser workflows, account workers, bot, scheduled jobs, dan proses operasional yang berulang.",
+    "operate": "Operasikan",
+    "operateDesc": "Server Linux, deployment, Cloudflare, manajemen service, proteksi origin, dan troubleshooting produksi."
+  }
+}
