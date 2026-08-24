@@ -54,7 +54,13 @@ export interface Dictionary {
   };
   about: {
     heading: string;
+    greeting: string;
+    viewResume: string;
     howIWork: string;
+    techStack: string;
+    experience: string;
+    services: string;
+    principles: string;
     location: string;
     timezone: string;
     availability: string;
