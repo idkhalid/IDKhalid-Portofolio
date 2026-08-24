@@ -38,7 +38,7 @@ export default function AboutPage() {
               
               <div className="mt-8">
                 <a
-                  href="/resume.pdf"
+                  href="/idkhalid-public-resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-sm font-medium text-accent hover:text-accent-dark transition-colors duration-200 group"

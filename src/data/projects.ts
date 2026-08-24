@@ -88,6 +88,7 @@ export const projects: Project[] = [
       "~5 listings per minute per account during testing",
     ],
     designTargets: ["10 isolated account workers"],
+    image: "/work/marketplace-automation.png",
     caseStudy: {
       context:
         "A marketplace operation needed to scale listing creation across multiple accounts without triggering platform detection. Manual listing was too slow—each account required isolated browser sessions, proxy rotation, and controlled pacing.",
@@ -314,6 +315,7 @@ export const projects: Project[] = [
       "Integrasi layout custom untuk Landing page, Login, Register, dan Dashboard",
       "Implementasi sistem penarikan dana (withdraw) otomatis dan manual",
     ],
+    image: "/work/trading-investment-platform.png",
     liveUrl: "https://trading-forex.my.id/",
     caseStudy: {
       context:
