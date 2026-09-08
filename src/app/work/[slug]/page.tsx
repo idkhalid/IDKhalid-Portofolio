@@ -21,6 +21,12 @@ export async function generateMetadata({
 
   const title = `${project.title} — ${siteConfig.name}`;
   const url = getSiteUrl(`/work/${project.slug}`);
+  const image = project.image
+    ? {
+        url: getSiteUrl(project.image),
+        alt: project.imageAlt ?? `${project.title} project screenshot`,
+      }
+    : undefined;
 
   return {
     title,
@@ -32,11 +38,13 @@ export async function generateMetadata({
       url,
       type: "website",
       siteName: siteConfig.name,
+      ...(image ? { images: [image] } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title,
       description: project.summary,
+      ...(image ? { images: [image.url] } : {}),
     },
   };
 }

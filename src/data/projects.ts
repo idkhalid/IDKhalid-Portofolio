@@ -18,7 +18,10 @@ export interface Project {
   operationalTarget?: string;
   operationalTarget_id?: string;
   image?: string;
+  imageAlt?: string;
+  imageFit?: "cover" | "contain";
   liveUrl?: string;
+  repoUrl?: string;
 
   caseStudy: {
     context: string;
@@ -248,6 +251,102 @@ export const projects: Project[] = [
   },
   {
     index: "04",
+    slug: "game-true-id-api",
+    category: "Backend API",
+    year: 2026,
+    title: "Game True ID API",
+    summary:
+      "A runtime-portable API gateway that normalizes identity resolution across 12 games behind one public contract.",
+    summary_id:
+      "Gateway API portabel yang menormalisasi resolusi identitas untuk 12 game di balik satu kontrak publik.",
+    stack: ["TypeScript", "Web APIs", "Node.js", "Cloudflare Workers", "Vercel"],
+    verifiedResults: [
+      "12 supported games exposed through one public gateway",
+      "Normalized success and error responses across upstream providers",
+      "Production endpoint published at api.game-true-id.eu.cc/games",
+    ],
+    verifiedResults_id: [
+      "12 game didukung melalui satu public gateway",
+      "Respons sukses dan error dinormalisasi dari berbagai upstream provider",
+      "Endpoint production tersedia di api.game-true-id.eu.cc/games",
+    ],
+    scope: [
+      "GET /games for supported games and required parameters",
+      "GET /nickname/{game} for public identity resolution",
+      "Game-specific input validation and server normalization",
+      "Consistent public error codes for upstream failures",
+    ],
+    scope_id: [
+      "GET /games untuk daftar game dan parameter yang dibutuhkan",
+      "GET /nickname/{game} untuk resolusi identitas publik",
+      "Validasi input per game dan normalisasi server",
+      "Error code publik yang konsisten saat upstream gagal",
+    ],
+    image: "/work/game-true-id-api.png",
+    imageAlt:
+      "Game True ID multi-game identity resolution API with normalized response and supported games overview",
+    imageFit: "contain",
+    liveUrl: "https://api.game-true-id.eu.cc/games",
+    repoUrl: "https://github.com/idkhalid/game-true-id-api",
+    caseStudy: {
+      context:
+        "Identity lookups came from multiple upstream services with different request and response shapes. A public gateway was needed to expose one predictable API while keeping provider-specific behavior behind adapters.",
+      constraints: [
+        "One public route pattern must support multiple games with different required parameters",
+        "Game-specific inputs and public server values must be validated before upstream requests",
+        "Internal provider responses and fields must not leak through the public contract",
+        "The core handler must run across Cloudflare Workers, Vercel, and generic Node.js deployments",
+      ],
+      systemDesign:
+        "The portable core uses standard Web APIs (Request and Response). It routes /games and /nickname/{game}, validates centralized game definitions, selects the appropriate upstream backend or adapter, rebuilds normalized success and error responses, and runs through thin Node.js, Vercel, and Cloudflare Workers entrypoints.",
+      keyDecisions: [
+        "Centralized supported-game definitions and required parameters in one routing source",
+        "Used provider-specific upstream selection behind a single public gateway",
+        "Reconstructed public responses to avoid exposing internal provider fields",
+        "Used standard Web APIs so the request handler is portable across runtimes",
+      ],
+      verification:
+        "The repository defines 12 supported games and the public /games and /nickname/{game} contracts. The released gateway is published at api.game-true-id.eu.cc/games.",
+      improvements: [
+        "Add automated contract tests for every supported game and error code",
+        "Add a public health or status endpoint for operational checks",
+        "Document provider failure behavior and deployment configuration in more detail",
+      ],
+      role: "Sole developer",
+      duration: "Ongoing",
+      status: "Released — public API",
+    },
+    caseStudy_id: {
+      context:
+        "Resolusi identitas game berasal dari beberapa upstream service dengan bentuk request dan response yang berbeda. Dibutuhkan gateway publik dengan API yang konsisten, sementara perilaku spesifik provider tetap berada di balik adapter.",
+      constraints: [
+        "Satu pola route publik harus mendukung banyak game dengan parameter wajib yang berbeda",
+        "Input per game dan nilai server publik harus divalidasi sebelum request ke upstream",
+        "Response dan field internal provider tidak boleh bocor melalui kontrak publik",
+        "Handler inti harus bisa berjalan di Cloudflare Workers, Vercel, dan deployment Node.js generik",
+      ],
+      systemDesign:
+        "Core portabel menggunakan Web API standar (Request dan Response). Handler merutekan /games dan /nickname/{game}, memvalidasi definisi game terpusat, memilih backend atau adapter upstream yang sesuai, membangun ulang response sukses dan error yang konsisten, lalu dijalankan melalui entrypoint Node.js, Vercel, dan Cloudflare Workers.",
+      keyDecisions: [
+        "Memusatkan definisi game yang didukung dan parameter wajib dalam satu sumber routing",
+        "Menggunakan pemilihan upstream spesifik provider di balik satu public gateway",
+        "Membangun ulang response publik agar field internal provider tidak ikut terekspos",
+        "Menggunakan Web API standar agar handler request portabel lintas runtime",
+      ],
+      verification:
+        "Repository mendefinisikan 12 game serta kontrak publik /games dan /nickname/{game}. Gateway yang dirilis tersedia di api.game-true-id.eu.cc/games.",
+      improvements: [
+        "Menambahkan contract test otomatis untuk setiap game dan error code",
+        "Menambahkan endpoint health atau status publik untuk kebutuhan operasional",
+        "Melengkapi dokumentasi perilaku saat provider gagal dan konfigurasi deployment",
+      ],
+      role: "Sole developer",
+      duration: "Ongoing",
+      status: "Released — public API",
+    },
+  },
+  {
+    index: "05",
     slug: "hosting-operations-dashboard",
     category: "Internal Tool",
     year: 2026,
@@ -295,7 +394,7 @@ export const projects: Project[] = [
     },
   },
   {
-    index: "05",
+    index: "06",
     slug: "trading-investment-platform",
     category: "Web Application",
     year: 2026,
@@ -369,7 +468,7 @@ export const projects: Project[] = [
     },
   },
   {
-    index: "06",
+    index: "07",
     slug: "telegram-service-fleet",
     category: "Service Operations",
     year: 2026,
@@ -411,7 +510,7 @@ export const projects: Project[] = [
     },
   },
   {
-    index: "07",
+    index: "08",
     slug: "cekresiku",
     category: "Web Application",
     year: 2026,
@@ -463,7 +562,7 @@ export const projects: Project[] = [
     },
   },
   {
-    index: "08",
+    index: "09",
     slug: "simpel-order-sistem",
     category: "Web Application",
     year: 2026,
@@ -516,7 +615,7 @@ export const projects: Project[] = [
     },
   },
   {
-    index: "09",
+    index: "10",
     slug: "gadjahmada-network",
     category: "Landing Page",
     year: 2025,

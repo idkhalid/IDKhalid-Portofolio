@@ -27,6 +27,7 @@
   "project": {
     "viewCaseStudy": "View case study",
     "liveSite": "Live site",
+    "sourceCode": "Source code",
     "moreWork": "More work",
     "allSelectedWork": "All selected work",
     "verified": "Verified",

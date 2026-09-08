@@ -35,9 +35,13 @@ export function ProjectFeature({
               <div className="relative aspect-[4/3] rounded overflow-hidden border border-line">
                 <Image
                   src={project.image}
-                  alt={`${project.title} screenshot`}
+                  alt={project.imageAlt ?? `${project.title} screenshot`}
                   fill
-                  className="object-cover"
+                  className={
+                    project.imageFit === "contain"
+                      ? "object-contain"
+                      : "object-cover"
+                  }
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
               </div>
@@ -196,6 +200,19 @@ export function ProjectFeature({
                   className="inline-flex items-center text-sm text-muted hover:text-ink transition-colors duration-200 group"
                 >
                   {t.project.liveSite}{" "}
+                  <span className="ml-1.5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                    ↗
+                  </span>
+                </a>
+              )}
+              {project.repoUrl && (
+                <a
+                  href={project.repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sm text-muted hover:text-ink transition-colors duration-200 group"
+                >
+                  {t.project.sourceCode}{" "}
                   <span className="ml-1.5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
                     ↗
                   </span>

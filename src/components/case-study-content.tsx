@@ -80,6 +80,19 @@ export function CaseStudyContent({
                 </span>
               </a>
             )}
+            {project.repoUrl && (
+              <a
+                href={project.repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm text-muted hover:text-ink transition-colors duration-200 group mt-4 ml-4"
+              >
+                {t.project.sourceCode}{" "}
+                <span className="ml-1.5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                  ↗
+                </span>
+              </a>
+            )}
           </div>
         </Reveal>
 
@@ -89,9 +102,13 @@ export function CaseStudyContent({
             <div className="relative aspect-[16/9] max-w-4xl rounded overflow-hidden border border-line mb-16 md:mb-24">
               <Image
                 src={project.image}
-                alt={`${project.title} screenshot`}
+                alt={project.imageAlt ?? `${project.title} screenshot`}
                 fill
-                className="object-cover"
+                className={
+                  project.imageFit === "contain"
+                    ? "object-contain"
+                    : "object-cover"
+                }
                 sizes="(max-width: 1024px) 100vw, 60vw"
                 priority
               />

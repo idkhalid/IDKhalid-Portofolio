@@ -32,6 +32,7 @@ export interface Dictionary {
   project: {
     viewCaseStudy: string;
     liveSite: string;
+    sourceCode: string;
     moreWork: string;
     allSelectedWork: string;
     verified: string;
