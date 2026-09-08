@@ -5,6 +5,7 @@ import { useState } from "react";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -12,8 +13,13 @@ export function ContactForm() {
     
     const form = e.currentTarget;
     const formData = new FormData(form);
-    
-    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+
+    if (!accessKey) {
+      setStatus("error");
+      return;
+    }
+
+    formData.append("access_key", accessKey);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {

@@ -1,5 +1,27 @@
 import type { Locale } from "@/i18n/types";
 
+const isProductionEnvironment = process.env.APP_ENV === "production";
+const configuredSiteUrl = process.env.SITE_URL;
+
+function normalizeSiteUrl(value: string): string {
+  const url = new URL(value);
+  if (isProductionEnvironment && url.protocol !== "https:") {
+    throw new Error("SITE_URL must use HTTPS in production.");
+  }
+  url.search = "";
+  url.hash = "";
+  url.pathname = url.pathname.replace(/\/+$/, "");
+  return url.toString().replace(/\/$/, "");
+}
+
+if (isProductionEnvironment && typeof window === "undefined" && !configuredSiteUrl) {
+  throw new Error("SITE_URL is required when APP_ENV=production.");
+}
+
+const resolvedSiteUrl = normalizeSiteUrl(
+  configuredSiteUrl || "http://localhost:3000"
+);
+
 interface BilingualString {
   en: string;
   id: string;
@@ -56,6 +78,7 @@ export const siteConfig = {
   name: "Idham Khalid",
   initials: "IK",
   role: "Independent Developer",
+  url: resolvedSiteUrl,
   location: "Bekasi, Indonesia",
   timezone: "UTC+7",
   year: 2026,
@@ -238,8 +261,17 @@ export const siteConfig = {
     facebook: "https://fb.com/idhamdotid",
   },
 
-  canonicalUrl: "[PORTFOLIO_URL]",
 };
+
+export const isIndexableEnvironment = isProductionEnvironment;
+
+export function getSiteUrl(pathname = "/"): string {
+  const url = new URL(pathname, `${siteConfig.url}/`);
+  if (pathname === "/") {
+    return `${url.origin}${url.pathname.endsWith("/") ? url.pathname : `${url.pathname}/`}`;
+  }
+  return `${url.origin}${url.pathname.replace(/\/$/, "")}`;
+}
 
 export function isConfigured(value: string): boolean {
   return !value.startsWith("[");

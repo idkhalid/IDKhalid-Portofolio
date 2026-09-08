@@ -1,38 +1,34 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
+import { getSiteUrl, isIndexableEnvironment } from "@/data/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://idkhalid.com";
+  if (!isIndexableEnvironment) return [];
 
   const projectRoutes = projects.map((project) => ({
-    url: `${baseUrl}/work/${project.slug}`,
-    lastModified: new Date(),
+    url: getSiteUrl(`/work/${project.slug}`),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
   return [
     {
-      url: baseUrl,
-      lastModified: new Date(),
+      url: getSiteUrl(),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: `${baseUrl}/work`,
-      lastModified: new Date(),
+      url: getSiteUrl("/work"),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/notes`,
-      lastModified: new Date(),
+      url: getSiteUrl("/notes"),
       changeFrequency: "weekly",
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
+      url: getSiteUrl("/about"),
       changeFrequency: "monthly",
       priority: 0.5,
     },

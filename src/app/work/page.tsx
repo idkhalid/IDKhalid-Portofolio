@@ -15,6 +15,7 @@ export default function WorkPage() {
           number="—"
           title={t.sections.allWork}
           subtitle={t.sections.allWorkSub}
+          headingLevel={1}
         />
 
         {projects.map((project, i) => (

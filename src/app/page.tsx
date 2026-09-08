@@ -33,6 +33,7 @@ export default function Home() {
             number="01"
             title={t.sections.selectedWork}
             subtitle={t.sections.selectedWorkSub}
+            id="selected-work"
           />
 
           {/* Featured projects — full editorial layout */}
@@ -78,7 +79,11 @@ export default function Home() {
       {/* Capabilities */}
       <section className="py-20 md:py-28" aria-labelledby="capabilities">
         <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-16">
-          <SectionHeading number="02" title={t.sections.capabilities} />
+          <SectionHeading
+            number="02"
+            title={t.sections.capabilities}
+            id="capabilities"
+          />
           <Capabilities />
           <Reveal delay={240}>
             <p className="font-mono text-xs text-muted mt-8">
@@ -98,6 +103,7 @@ export default function Home() {
             number="03"
             title={t.sections.workingNotes}
             subtitle={t.sections.workingNotesSub}
+            id="working-notes"
           />
           <NotesIndex limit={3} />
         </div>
@@ -108,7 +114,7 @@ export default function Home() {
       {/* About */}
       <section className="py-20 md:py-28" aria-labelledby="about-preview">
         <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-16">
-          <SectionHeading number="04" title={t.sections.about} />
+          <SectionHeading number="04" title={t.sections.about} id="about-preview" />
           <AboutPreview />
         </div>
       </section>
@@ -122,7 +128,7 @@ export default function Home() {
         aria-labelledby="contact-section"
       >
         <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-16">
-          <SectionHeading number="05" title={t.sections.contact} />
+          <SectionHeading number="05" title={t.sections.contact} id="contact-section" />
           <ContactSection />
         </div>
       </section>

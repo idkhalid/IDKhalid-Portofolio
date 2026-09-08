@@ -70,9 +70,9 @@ export function ProjectFeature({
             </p>
 
             {/* Title */}
-            <h3 className="text-2xl md:text-3xl font-medium tracking-tight mb-4">
+            <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-4">
               {project.title}
-            </h3>
+            </h2>
 
             {/* Summary */}
             <p className="text-base text-muted leading-relaxed mb-6 max-w-lg">

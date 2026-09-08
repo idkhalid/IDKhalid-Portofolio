@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
+import { getSiteUrl, siteConfig } from "@/data/site";
 import { CaseStudyContent } from "@/components/case-study-content";
 
 export function generateStaticParams() {
@@ -18,9 +19,25 @@ export async function generateMetadata({
   const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
 
+  const title = `${project.title} — ${siteConfig.name}`;
+  const url = getSiteUrl(`/work/${project.slug}`);
+
   return {
-    title: project.title,
+    title,
     description: project.summary,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description: project.summary,
+      url,
+      type: "website",
+      siteName: siteConfig.name,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: project.summary,
+    },
   };
 }
 

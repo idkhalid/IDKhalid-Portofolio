@@ -485,7 +485,6 @@ export const projects: Project[] = [
       "SEO-friendly URL slug untuk setiap produk",
     ],
     image: "/work/simpel-order-sistem.jpg",
-    liveUrl: "https://ordersekarang.shop/",
     caseStudy: {
       context:
         "Dibutuhkan platform penjualan single-product yang bisa disetup cepat untuk berbagai produk, dengan checkout yang simple dan tingkat konversi tinggi. Marketplace tidak memberikan kontrol penuh atas customer journey dan biaya komisi memotong margin.",
@@ -572,4 +571,3 @@ export const projects: Project[] = [
     },
   },
 ];
-

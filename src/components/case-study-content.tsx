@@ -110,9 +110,9 @@ export function CaseStudyContent({
           {sections.map((section, i) => (
             <Reveal key={section.number} delay={i * 60}>
               <div className="mb-12 md:mb-16">
-                <p className="font-mono text-xs uppercase tracking-[0.15em] text-muted mb-3">
+                <h2 className="font-mono text-xs uppercase tracking-[0.15em] text-muted mb-3">
                   {section.number} — {section.title}
-                </p>
+                </h2>
                 {section.content && (
                   <p className="text-base leading-relaxed text-ink/90">
                     {section.content}

@@ -14,9 +14,9 @@ export default function AboutPage() {
         <div className="max-w-3xl">
           {/* Header */}
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.15em] text-muted mb-8">
+            <h1 className="font-mono text-xs uppercase tracking-[0.15em] text-muted mb-8">
               {t.about.heading} / {siteConfig.year}
-            </p>
+            </h1>
           </Reveal>
 
           {/* Bio */}

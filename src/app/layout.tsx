@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { Instrument_Sans, IBM_Plex_Mono } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { siteConfig } from "@/data/site";
+import {
+  getSiteUrl,
+  isIndexableEnvironment,
+  siteConfig,
+} from "@/data/site";
 import { LocaleProvider } from "@/i18n/locale-context";
 import "./globals.css";
 
@@ -21,6 +25,8 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
+  alternates: { canonical: getSiteUrl() },
   title: {
     default: `${siteConfig.name} — ${siteConfig.role}`,
     template: `%s — ${siteConfig.name}`,
@@ -48,6 +54,7 @@ export const metadata: Metadata = {
     title: `${siteConfig.name} — ${siteConfig.role}`,
     description: siteConfig.subheadline.en,
     siteName: siteConfig.name,
+    url: getSiteUrl(),
   },
   twitter: {
     card: "summary_large_image",
@@ -55,8 +62,8 @@ export const metadata: Metadata = {
     description: siteConfig.subheadline.en,
   },
   robots: {
-    index: true,
-    follow: true,
+    index: isIndexableEnvironment,
+    follow: isIndexableEnvironment,
   },
 };
 
@@ -74,28 +81,41 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: siteConfig.name,
-              jobTitle: siteConfig.role,
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Bekasi",
-                addressCountry: "ID",
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "@id": `${siteConfig.url}#person`,
+                name: siteConfig.name,
+                url: siteConfig.url,
+                jobTitle: siteConfig.role,
+                sameAs: [siteConfig.contact.github, siteConfig.contact.facebook],
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "Bekasi",
+                  addressCountry: "ID",
+                },
+                knowsAbout: [
+                  "Web Development",
+                  "Automation",
+                  "Backend Development",
+                  "Infrastructure",
+                  "Python",
+                  "Go",
+                  "Laravel",
+                  "Next.js",
+                  "Linux",
+                  "Cloudflare",
+                ],
               },
-              knowsAbout: [
-                "Web Development",
-                "Automation",
-                "Infrastructure",
-                "Python",
-                "Go",
-                "Laravel",
-                "Next.js",
-                "Linux",
-                "Cloudflare",
-              ],
-            }),
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                name: siteConfig.name,
+                url: siteConfig.url,
+                publisher: { "@id": `${siteConfig.url}#person` },
+              },
+            ]),
           }}
         />
       </head>

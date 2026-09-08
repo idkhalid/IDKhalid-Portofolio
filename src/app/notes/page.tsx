@@ -14,6 +14,7 @@ export default function NotesPage() {
           number="—"
           title={t.sections.workingNotes}
           subtitle={t.sections.workingNotesSub}
+          headingLevel={1}
         />
         <div className="max-w-3xl">
           <NotesIndex />
