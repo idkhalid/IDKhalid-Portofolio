@@ -76,6 +76,56 @@ export function localizedArray(
 export const projects: Project[] = [
   {
     index: "01",
+    slug: "protocollens",
+    category: "Developer Tool",
+    year: 2026,
+    title: "ProtocolLens",
+    summary:
+      "Go-first browser traffic analysis tool for turning HAR data into endpoints, session artifacts, request dependencies, workflow graphs, safe replay, generated HTTP clients, and browser-vs-HTTP comparisons.",
+    stack: ["Go", "React", "SQLite", "Playwright"],
+    verifiedResults: [
+      "Go-first HAR analysis pipeline",
+      "Safe HTTP replay and client generation",
+      "Local Playwright traffic capture",
+      "Request dependency and workflow inference",
+      "Browser-to-HTTP benchmark",
+    ],
+    designTargets: ["Replay and local browser capture disabled by default"],
+    image: "/work/protocollens-workflow-dark.png",
+    imageAlt:
+      "ProtocolLens workflow graph showing inferred request dependencies",
+    repoUrl: "https://github.com/idkhalid/ProtocolLens",
+    caseStudy: {
+      context:
+        "ProtocolLens analyzes browser network traffic and turns captured HAR data into a structured model of endpoints, sessions, dependencies, and request workflows.",
+      constraints: [
+        "Replay, browser capture, and benchmarks must stay opt-in",
+        "Local Capture must remain loopback-only with destination validation",
+        "Sensitive session values must be discarded during normalization",
+        "Benchmark runs must stay bounded and acknowledge repeated non-idempotent requests",
+      ],
+      systemDesign:
+        "HAR and local Playwright capture feed the same Go normalization and analysis pipeline. Go owns the business logic, SQLite stores the model, an HTTP API exposes it, and React presents the local workbench. Safe Replay is reused by HTTP replay, client generation, and browser-to-HTTP benchmarking.",
+      keyDecisions: [
+        "Kept Playwright as a local capture adapter instead of moving analysis into browser automation",
+        "Discarded sensitive session values during normalization so generated clients cannot recover them",
+        "Reused the Safe Replay path for benchmark execution instead of adding another HTTP transport",
+        "Avoided capture, replay, and benchmark history tables for the v0.1.0 release",
+      ],
+      verification:
+        "Released as v0.1.0 with Windows and Linux CI coverage. Playwright process cancellation includes process-tree cleanup.",
+      improvements: [
+        "Add more analyzer fixtures from real-world HAR exports",
+        "Expand generated client coverage as replay templates mature",
+        "Document capture and replay threat boundaries in the README",
+      ],
+      role: "Sole developer",
+      duration: "v0.1.0 release",
+      status: "Released",
+    },
+  },
+  {
+    index: "02",
     slug: "marketplace-automation",
     category: "Automation",
     year: 2026,
@@ -123,7 +173,7 @@ export const projects: Project[] = [
     },
   },
   {
-    index: "02",
+    index: "03",
     slug: "cloudflare-origin-lock",
     category: "Infrastructure Security",
     year: 2026,
@@ -167,7 +217,7 @@ export const projects: Project[] = [
     },
   },
   {
-    index: "03",
+    index: "04",
     slug: "http-protocol-resilience-tester",
     category: "Security Engineering",
     year: 2026,
@@ -250,7 +300,7 @@ export const projects: Project[] = [
     }
   },
   {
-    index: "04",
+    index: "05",
     slug: "game-true-id-api",
     category: "Backend API",
     year: 2026,
@@ -346,7 +396,7 @@ export const projects: Project[] = [
     },
   },
   {
-    index: "05",
+    index: "06",
     slug: "hosting-operations-dashboard",
     category: "Internal Tool",
     year: 2026,
@@ -394,7 +444,7 @@ export const projects: Project[] = [
     },
   },
   {
-    index: "06",
+    index: "07",
     slug: "trading-investment-platform",
     category: "Web Application",
     year: 2026,
@@ -468,7 +518,7 @@ export const projects: Project[] = [
     },
   },
   {
-    index: "07",
+    index: "08",
     slug: "telegram-service-fleet",
     category: "Service Operations",
     year: 2026,
@@ -510,7 +560,7 @@ export const projects: Project[] = [
     },
   },
   {
-    index: "08",
+    index: "09",
     slug: "cekresiku",
     category: "Web Application",
     year: 2026,
@@ -562,7 +612,7 @@ export const projects: Project[] = [
     },
   },
   {
-    index: "09",
+    index: "10",
     slug: "simpel-order-sistem",
     category: "Web Application",
     year: 2026,
@@ -615,7 +665,7 @@ export const projects: Project[] = [
     },
   },
   {
-    index: "10",
+    index: "11",
     slug: "gadjahmada-network",
     category: "Landing Page",
     year: 2025,
